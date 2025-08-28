@@ -26,13 +26,13 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/courses" className="hover:text-yellow-300">
-                Courses
+              <Link to="/schedule" className="hover:text-yellow-300">
+                schedule
               </Link>
             </li>
             <li>
-              <Link to="/teachers" className="hover:text-yellow-300">
-                Teachers
+              <Link to="/budget" className="hover:text-yellow-300">
+                Budget-Tracker
               </Link>
             </li>
             <li>

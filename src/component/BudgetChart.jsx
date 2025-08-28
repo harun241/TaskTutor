@@ -23,8 +23,8 @@ export default function BudgetChart({ transactions = [] }) {
       {
         label: "Budget",
         data: [totalIncome, totalExpense],
-        backgroundColor: ["#34D399", "#F87171"],
-        borderColor: ["#065F46", "#B91C1C"],
+        backgroundColor: ["#3B82F6", "#F59E0B"], // Blue & Orange
+        borderColor: ["#1E40AF", "#B45309"], // Dark Blue & Dark Orange
         borderWidth: 1
       }
     ]
