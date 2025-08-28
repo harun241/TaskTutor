@@ -4,7 +4,7 @@ export default function Navbar() {
   const navItems = [
     { path: "/", label: "Home" },
     { path: "/schedule", label: "Schedule" },
-    { path: "/teachers", label: "Teachers" },
+    { path: "/budget", label: "Budget-Tracker" },
     { path: "/dashboard", label: "Dashboard" },
     { path: "/login", label: "Login" },
     { path: "/register", label: "Register" },
