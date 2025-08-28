@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 export default function Navbar() {
   const navItems = [
     { path: "/", label: "Home" },
-    { path: "/courses", label: "Courses" },
+    { path: "/schedule", label: "Schedule" },
     { path: "/teachers", label: "Teachers" },
     { path: "/dashboard", label: "Dashboard" },
     { path: "/login", label: "Login" },
