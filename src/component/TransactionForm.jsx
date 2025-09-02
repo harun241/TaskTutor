@@ -12,7 +12,8 @@ export default function TransactionForm({ onAdd }) {
 
     const transaction = { type, category, amount: Number(amount), date: new Date() };
     try {
-      const res = await axios.post("http://localhost:3000/api/transactions", transaction);
+      
+      const res = await axios.post("/api/transactions", transaction);
       onAdd(res.data);
       setCategory("");
       setAmount("");

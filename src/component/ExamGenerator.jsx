@@ -10,7 +10,7 @@ export default function ExamGenerator() {
 
   // Fetch questions from backend (MongoDB)
   useEffect(() => {
-    fetch("http://localhost:3000/api/mcq")
+    fetch("https://task-tutor-server.vercel.app/api/mcq")
       .then((res) => res.json())
       .then((data) => setQuestions(data))
       .catch((err) => console.error("Error fetching questions:", err));

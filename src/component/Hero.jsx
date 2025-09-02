@@ -50,7 +50,7 @@ export default function Hero() {
         {/* Right: Illustration */}
         <div className="md:w-1/2">
           <img
-            src="/hero-student.png"
+            src="https://i.ibb.co.com/Y7KcnFBQ/image.png"
             alt="Student Tools Illustration"
             className="w-full h-auto"
           />

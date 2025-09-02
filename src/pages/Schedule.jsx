@@ -10,7 +10,7 @@ export default function Schedule() {
 
   const fetchClasses = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/classes");
+      const res = await axios.get("https://task-tutor-server.vercel.app/api/classes");
       setClasses(res.data);
     } catch (err) {
       console.error(err);
@@ -24,10 +24,10 @@ export default function Schedule() {
 
     try {
       if (editingId) {
-        await axios.put(`http://localhost:3000/api/classes/${editingId}`, newClass);
+        await axios.put(`https://task-tutor-server.vercel.app/api/classes/${editingId}`, newClass);
         setEditingId(null);
       } else {
-        await axios.post("http://localhost:3000/api/classes", newClass);
+        await axios.post("https://task-tutor-server.vercel.app/api/classes", newClass);
       }
       setNewClass({ subject: "", day: "", time: "", instructor: "", color: "bg-blue-200" });
       fetchClasses();
@@ -37,7 +37,7 @@ export default function Schedule() {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3000/api/classes/${id}`);
+    await axios.delete(`https://task-tutor-server.vercel.app/api/classes/${id}`);
     fetchClasses();
   };
 

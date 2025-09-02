@@ -7,10 +7,10 @@ export default function Navbar() {
 
   const navItems = [
     { path: "/", label: "Home" },
-    { path: "/schedule", label: "Schedule" },
-    { path: "/budget", label: "Budget-Tracker" },
-    { path: "/exam", label: "Exam-Generator" },
-    { path: "/planner", label: "Study-Planner" },
+    { path: "/dashboard/schedule", label: "Schedule" },
+    { path: "/dashboard/budget", label: "Budget-Tracker" },
+    { path: "/dashboard/exam", label: "Exam-Generator" },
+    { path: "/dashboard/planner", label: "Study-Planner" },
     { path: "/dashboard", label: "Dashboard" },
     { path: "/login", label: "Login" },
     { path: "/register", label: "Register" },

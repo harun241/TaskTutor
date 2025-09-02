@@ -7,6 +7,8 @@ import Schedule from "../pages/Schedule";
 import BudgetTracker from "../component/BudgetTracker";
 import ExamGenerator from "../component/ExamGenerator";
 import StudyPlanner from "../pages/StudyPlanner";
+import DashboardLayout from "../pages/Dashboard";
+import PomodoroTimer from "../component/PomodoroTimer";
 
 const router = createBrowserRouter([
   {
@@ -16,10 +18,19 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
-      { path: "/schedule", element: <Schedule /> }, // Added Schedule page
-      { path: "/budget", element: <BudgetTracker /> }, 
-      { path: "/exam", element: < ExamGenerator/> },  
-      { path: "/planner", element: < StudyPlanner/> }, 
+      
+      // Dashboard with nested routes
+      {
+        path: "/dashboard",
+        element: <DashboardLayout />,
+        children: [
+          { path: "schedule", element: <Schedule /> },
+          { path: "budget", element: <BudgetTracker /> },
+          { path: "exam", element: <ExamGenerator /> },
+          { path: "planner", element: <StudyPlanner /> },
+          { path: "pomodoro", element: <PomodoroTimer /> },
+        ],
+      },
     ],
   },
 ]);

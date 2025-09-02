@@ -15,7 +15,7 @@ export default function StudyPlanner() {
 
   // Fetch tasks
   useEffect(() => {
-    axios.get("http://localhost:3000/api/study-tasks")
+    axios.get("https://task-tutor-server.vercel.app/api/study-tasks")
       .then(res => setTasks(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -29,7 +29,7 @@ export default function StudyPlanner() {
   const handleAdd = async e => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3000/api/study-tasks", form);
+      const res = await axios.post("https://task-tutor-server.vercel.app/api/study-tasks", form);
       setTasks([...tasks, res.data]);
       setForm({ subject: "", topic: "", priority: "Medium", day: "", allocatedTime: "", deadline: "" });
     } catch (err) {
@@ -40,7 +40,7 @@ export default function StudyPlanner() {
   // Delete task
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/study-tasks/${id}`);
+      await axios.delete(`https://task-tutor-server.vercel.app/api/study-tasks/${id}`);
       setTasks(tasks.filter(t => t._id !== id));
     } catch (err) {
       console.error(err);

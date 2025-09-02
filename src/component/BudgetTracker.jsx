@@ -11,7 +11,7 @@ export default function BudgetTracker() {
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/transactions");
+        const res = await axios.get("https://task-tutor-server.vercel.app/api/transactions");
         setTransactions(res.data);
       } catch (err) {
         console.error(err);

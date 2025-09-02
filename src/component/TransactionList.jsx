@@ -4,7 +4,7 @@ import axios from "axios";
 export default function TransactionList({ transactions = [], setTransactions }) {
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/transactions/${id}`);
+      await axios.delete(`https://task-tutor-server.vercel.app/api/transactions/${id}`);
       setTransactions(transactions.filter(t => t._id !== id));
     } catch (err) {
       console.error(err);
