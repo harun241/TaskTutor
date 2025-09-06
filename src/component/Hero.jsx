@@ -50,7 +50,7 @@ export default function Hero() {
         {/* Right: Illustration */}
         <div className="w-full md:w-1/2 flex justify-center">
           <img
-            src="https://i.ibb.co.com/Y7KcnFBQ/image.png"
+            src="https://i.ibb.co.com/rRncxG0k/540679436-122205272150284746-4840612466640672921-n-1.jpg"
             alt="Student Tools Illustration"
             className="w-3/4 sm:w-2/3 md:w-full h-auto"
           />

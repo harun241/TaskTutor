@@ -22,27 +22,32 @@ const feedbacks = [
 
 export default function FeedbackSection() {
   return (
-    <div className="max-w-full mx-auto py-12 px-4 bg-gray-50">
+    <div className="py-12 px-4 bg-gray-50">
       <h2 className="text-3xl font-bold text-center mb-8">Users Feedback</h2>
 
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={20}
-        slidesPerView={1}  // Always show 1 slide
+        slidesPerView={1} // সব ডিভাইসে ১ কার্ড
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 4000 }}
         loop
+        className="pb-6"
       >
         {feedbacks.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="h-full flex flex-col justify-between bg-white p-6 rounded-xl shadow-md text-center">
-              <p className="text-gray-700 italic mb-4">"{item.feedback}"</p>
-              <h3 className="text-lg font-semibold mt-auto">{item.name}</h3>
+            <div className="mx-auto w-full sm:w-96 md:w-96 h-48 flex flex-col justify-between bg-white p-6 rounded-xl shadow-md border border-gray-300 text-center">
+              <p className="text-gray-700 italic mb-4 flex-1 overflow-hidden text-ellipsis">
+                "{item.feedback}"
+              </p>
+              <h3 className="text-lg font-semibold">{item.name}</h3>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* Pagination center-align */}
+    
     </div>
   );
 }

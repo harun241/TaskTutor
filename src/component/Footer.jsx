@@ -4,9 +4,9 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-cyan-700 text-white mt-10">
-      <div className="container mx-auto px-4 py-8 grid md:grid-cols-3 gap-6">
+      <div className="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left: Logo + About */}
-        <div>
+        <div className="flex flex-col">
           <h2 className="text-2xl font-bold">
             Task<span className="text-yellow-300">Tutor</span>
           </h2>
@@ -17,7 +17,7 @@ export default function Footer() {
         </div>
 
         {/* Middle: Quick Links */}
-        <div>
+        <div className="flex flex-col mt-6 md:mt-0">
           <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
           <ul className="space-y-2">
             <li>
@@ -27,12 +27,12 @@ export default function Footer() {
             </li>
             <li>
               <Link to="/dashboard/schedule" className="hover:text-yellow-300">
-                schedule
+                Schedule
               </Link>
             </li>
             <li>
               <Link to="/dashboard/budget" className="hover:text-yellow-300">
-                Budget-Tracker
+                Budget Tracker
               </Link>
             </li>
             <li>
@@ -44,7 +44,7 @@ export default function Footer() {
         </div>
 
         {/* Right: Social Media */}
-        <div>
+        <div className="flex flex-col mt-6 md:mt-0">
           <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
           <div className="flex gap-4">
             <a href="https://facebook.com" target="_blank" rel="noreferrer">
@@ -61,7 +61,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom */}
-      <div className=" text-center py-3 text-sm">
+      <div className="text-center py-3 text-sm border-t border-cyan-600 mt-4">
         © {new Date().getFullYear()} Task-Tutor. All rights reserved.
       </div>
     </footer>
