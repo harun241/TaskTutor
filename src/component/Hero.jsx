@@ -33,16 +33,16 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
             <Link
-              to="/register"
+              to="/dashboard"
               className="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700 transition"
             >
               Get Started
             </Link>
             <Link
-              to="/features"
+              to="/content"
               className="border border-indigo-600 text-indigo-600 px-6 py-3 rounded hover:bg-indigo-50 transition"
             >
-              Explore Features
+              Explore Courses
             </Link>
           </div>
         </div>

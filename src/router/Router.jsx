@@ -1,14 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
 import Schedule from "../pages/Schedule";
 import BudgetTracker from "../component/BudgetTracker";
 import ExamGenerator from "../component/ExamGenerator";
 import StudyPlanner from "../pages/StudyPlanner";
 import DashboardLayout from "../pages/Dashboard";
 import PomodoroTimer from "../component/PomodoroTimer";
+import Contact from "../pages/Contact";
+import LessonSearch from "../pages/Content";
+import Notes from "../pages/Notes";
+
+
 
 const router = createBrowserRouter([
   {
@@ -16,8 +19,11 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/login", element: <Login /> },
-      { path: "/register", element: <Register /> },
+      { path: "/contact", element:<Contact></Contact>  },
+      { path: "/content", element:<LessonSearch></LessonSearch>  },
+      { path: "/notes", element:<Notes></Notes> },
+
+  
       
       // Dashboard with nested routes
       {

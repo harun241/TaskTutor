@@ -5,20 +5,26 @@ export default function TransactionForm({ onAdd }) {
   const [type, setType] = useState("income");
   const [category, setCategory] = useState("");
   const [amount, setAmount] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!category || !amount) return;
 
     const transaction = { type, category, amount: Number(amount), date: new Date() };
+    setLoading(true);
     try {
-      
-      const res = await axios.post("/api/transactions", transaction);
-      onAdd(res.data);
+      const res = await axios.post(
+        "https://task-tutor-server.vercel.app/api/transactions",
+        transaction
+      );
+      onAdd(res.data); // ✅ instant update
       setCategory("");
       setAmount("");
     } catch (err) {
       console.error(err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -44,7 +50,13 @@ export default function TransactionForm({ onAdd }) {
         className="p-2 border rounded"
         required
       />
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded">Add Transaction</button>
+      <button
+        type="submit"
+        className={`bg-blue-500 text-white p-2 rounded ${loading ? "opacity-50" : ""}`}
+        disabled={loading}
+      >
+        {loading ? "Adding..." : "Add Transaction"}
+      </button>
     </form>
   );
 }

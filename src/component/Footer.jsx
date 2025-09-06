@@ -26,12 +26,12 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/schedule" className="hover:text-yellow-300">
+              <Link to="/dashboard/schedule" className="hover:text-yellow-300">
                 schedule
               </Link>
             </li>
             <li>
-              <Link to="/budget" className="hover:text-yellow-300">
+              <Link to="/dashboard/budget" className="hover:text-yellow-300">
                 Budget-Tracker
               </Link>
             </li>
@@ -61,8 +61,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom */}
-      <div className="bg-indigo-900 text-center py-3 text-sm">
-        © {new Date().getFullYear()} EduManage. All rights reserved.
+      <div className=" text-center py-3 text-sm">
+        © {new Date().getFullYear()} Task-Tutor. All rights reserved.
       </div>
     </footer>
   );

@@ -7,7 +7,9 @@ import BudgetChart from "./BudgetChart";
 
 export default function BudgetTracker() {
   const [transactions, setTransactions] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  // Fetch initial transactions
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
@@ -15,6 +17,8 @@ export default function BudgetTracker() {
         setTransactions(res.data);
       } catch (err) {
         console.error(err);
+      } finally {
+        setLoading(false);
       }
     };
     fetchTransactions();
@@ -26,24 +30,29 @@ export default function BudgetTracker() {
 
       {/* Form */}
       <div className="mb-6">
-        <TransactionForm onAdd={t => setTransactions([...transactions, t])} />
+        <TransactionForm
+          onAdd={(newTransaction) =>
+            setTransactions(prev => [...prev, newTransaction]) // ✅ functional update
+          }
+        />
       </div>
 
-      {/* Summary + Chart in Flex Row */}
+      {/* Summary + Chart */}
       <div className="flex flex-col md:flex-row gap-6 mb-6">
         <div className="md:w-1/2">
           <Summary transactions={transactions} />
         </div>
-        
-      </div>
-
-      {/* Transactions List */}
-      <div>
-        <TransactionList transactions={transactions} setTransactions={setTransactions} />
-      </div>
-      <div className="md:w-1/2">
+        <div className="md:w-1/2">
           <BudgetChart transactions={transactions} />
         </div>
+      </div>
+
+      {/* Transaction List */}
+      <TransactionList
+        transactions={transactions}
+        setTransactions={setTransactions}
+        loading={loading}
+      />
     </div>
   );
 }
