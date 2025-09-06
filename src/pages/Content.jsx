@@ -48,7 +48,7 @@ export default function LessonSearch() {
               <h2 className="text-lg font-semibold mb-2">{lesson.title}</h2>
               <p className="mb-3 text-gray-700">{lesson.description}</p>
 
-              {/* Embedded YouTube Video */}
+              {/* Embedded YouTube Video with Lazy Loading */}
               <div className="aspect-w-16 aspect-h-9">
                 <iframe
                   src={`https://www.youtube.com/embed/${lesson.videoId}`}
@@ -56,7 +56,8 @@ export default function LessonSearch() {
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  className="w-full h-48 md:h-56"
+                  loading="lazy"   // 👈 Lazy load enabled
+                  className="w-full h-48 md:h-56 rounded"
                 ></iframe>
               </div>
             </div>
